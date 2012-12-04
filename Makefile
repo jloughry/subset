@@ -57,14 +57,8 @@ vi:
 
 edit: vi
 
-checkout:
-	co -l $(latex_source) $(makefile)
-
-checkin:
-	ci -u $(latex_source) $(makefile)
-
-checkpoint:
-	make checkin && make checkout
+notes:
+	(cd ../notes && make vi)
 
 spell:
 	$(aspell_cmd) $(latex_source)

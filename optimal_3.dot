@@ -1,0 +1,119 @@
+/*
+    dot -T pdf optimal_3.dot -o optimal_3.pdf
+*/
+
+digraph optimal_3 {
+
+	node [shape=plaintext]
+
+	/* ranks */
+
+	"rank0" [label="0"]
+	"rank1" [label="1"]
+	"rank2" [label="2"]
+	"rank3" [label="3"]
+	"rank4" [label="4"]
+	"rank5" [label="5"]
+	"rank6" [label="6"]
+	"rank7" [label="7"]
+
+	"size0" [label="(0)"]
+	"size1" [label="(1)"]
+	"size2" [label="(2)"]
+	"size3" [label="(1)"]
+	"size4" [label="(2)"]
+	"size5" [label="(1)"]
+	"size6" [label="(2)"]
+	"size7" [label="(3)"]
+
+	edge [style=invis]
+
+	"size0" -> "size1" -> "size2" -> "size3" -> "size4"
+		-> "size5" -> "size6" -> "size7"
+
+	edge [style=solid]
+	node [shape=box]
+
+	{rank=same; "rank0" [style=invis];
+		000
+	}
+
+	{rank=same; "rank1" [style=invis];
+		001
+		010
+		100
+	}
+
+	000->001; 000->010; 000->100;
+
+	{rank=same; "rank2" [style=invis];
+		011
+		101
+		011
+		110
+		101
+		110
+	}
+
+	001->011; 001->101;
+	010->011; 010->110;
+	100->101; 100->110;
+
+	{rank=same; "rank3" [style=invis];
+		"001a" [label="001"];
+		"010a" [label="010"];
+		"100a" [label="100"]
+	}
+
+	011->"001a"; 011->"010a";
+	110->"010a"; 110->"100a";
+	101->"100a"; 101->"001a";
+
+	{rank=same; "rank4" [style=invis];
+		"101b" [label="101"];
+		"011b" [label="011"];
+		"110b" [label="110"];
+		"011b" [label="011"];
+		"110b" [label="110"];
+		"101b" [label="101"];
+	}
+
+	"001a"->"101b"; "001a"->"011b";
+	"010a"->"110b"; "010a"->"011b";
+	"100a"->"101b"; "100a"->"110b";
+
+	{rank=same; "rank5" [style=invis]
+		"001c" [label="001"];
+		"010c" [label="010"];
+		"001c" [label="001"];
+		"100c" [label="100"];
+		"010c" [label="010"];
+		"100c" [label="100"];
+	}
+
+	"011b"->"001c"; "011b"->"010c";
+	"101b"->"001c"; "101b"->"100c";
+	"110b"->"010c"; "110b"->"100c";
+
+	{rank=same; "rank6" [style=invis];
+		"101d" [label="101"];
+		"011d" [label="011"];
+		"110d" [label="110"];
+		"011d" [label="011"];
+		"110d" [label="110"];
+		"101d" [label="101"];
+	}
+
+	"001c"->"101d"; "001c"->"011d";
+	"010c"->"110d"; "010c"->"011d";
+	"100c"->"110d"; "100c"->"101d";
+
+	{rank=same; "rank7" [style=invis];
+		111
+	}
+
+	"101d"->111;
+	"011d"->111;
+	"110d"->111;
+}
+

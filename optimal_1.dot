@@ -1,0 +1,32 @@
+/*
+	dot -T pdf optimal_1.dot -o optimal_1.pdf
+*/
+
+digraph optimal_1 {
+
+	node [shape=plaintext]
+
+	"rank0" [label="0"]
+	"rank1" [label="1"]
+
+	"size0" [label="(0)"]
+	"size1" [label="(1)"]
+
+	edge [style=invis]
+
+	"size0" -> "size1"
+
+	edge [style=solid]
+	node [shape=box]
+
+	{rank=same; "rank0" [style=invis];
+		0
+	}
+
+	{rank=same; "rank1" [style=invis];
+		1
+	}
+
+	0->1;
+}
+

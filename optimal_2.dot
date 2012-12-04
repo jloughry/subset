@@ -1,0 +1,53 @@
+/*
+    dot -T pdf optimal_2.dot -o optimal_2.pdf
+*/
+
+digraph optimal_2 {
+
+	node [shape=plaintext]
+
+	/* ranks */
+
+	"rank0" [label="0"]
+	"rank1" [label="1"]
+	"rank2" [label="2"]
+	"rank3" [label="3"]
+
+	"size0" [label="(0)"]
+	"size1" [label="(1)"]
+	"size2" [label="(2)"]
+	"size3" [label="(1)"]
+
+	edge[style=invis]
+
+	"size0" -> "size1" -> "size2" -> "size3"
+
+	node [shape=box]
+	edge [style=solid]
+
+	{rank=same; "rank0" [style=invis];
+		00
+	}
+
+	{rank=same; "rank1" [style=invis];
+		01
+		10
+	}
+
+	00->01; 00->10;
+
+	{rank=same; "rank2" [style=invis];
+		11
+	}
+
+	01->11;
+	10->11;
+
+	{rank=same; "rank3" [style=invis];
+		"01a" [label="01"];
+		"10a" [label="10"];
+	}
+
+	11->"01a"; 11->"10a";
+}
+
