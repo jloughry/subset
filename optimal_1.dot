@@ -20,13 +20,13 @@ digraph optimal_1 {
 	node [shape=box]
 
 	{rank=same; "rank0" [style=invis];
-		0
+		0 [shape=ellipse,color=red,fontcolor=red]
 	}
 
 	{rank=same; "rank1" [style=invis];
-		1
+		1 [shape=ellipse,color=red,fontcolor=red]
 	}
 
-	0->1;
+	0->1 [color=red];
 }
 

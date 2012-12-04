@@ -26,28 +26,28 @@ digraph optimal_2 {
 	edge [style=solid]
 
 	{rank=same; "rank0" [style=invis];
-		00
+		00 [shape=ellipse,color=red,fontcolor=red,style=bold];
 	}
 
 	{rank=same; "rank1" [style=invis];
-		01
+		01 [shape=ellipse,color=red,fontcolor=red,style=bold];
 		10
 	}
 
-	00->01; 00->10;
+	00->01 [color=red,style=bold]; 00->10;
 
 	{rank=same; "rank2" [style=invis];
-		11
+		11 [shape=ellipse,color=red,fontcolor=red,style=bold];
 	}
 
-	01->11;
+	01->11 [color=red,style=bold];
 	10->11;
 
 	{rank=same; "rank3" [style=invis];
 		"01a" [label="01"];
-		"10a" [label="10"];
+		"10a" [label="10",shape=ellipse,color=red,fontcolor=red,style=bold];
 	}
 
-	11->"01a"; 11->"10a";
+	11->"01a"; 11->"10a" [color=red,style=bold];
 }
 
