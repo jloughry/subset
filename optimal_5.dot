@@ -1,0 +1,145 @@
+/*
+    dot -T pdf optimal_5.dot -o optimal_5.pdf
+*/
+
+digraph optimal_5 {
+
+	node [shape=plaintext]
+
+	size0 [label="(0)"]
+	size1 [label="(1)"]
+	size2 [label="(2)"]
+	size3 [label="(1)"]
+	size4 [label="(2)"]
+	size5 [label="(1)"]
+	size6 [label="(2)"]
+	size7 [label="(1)"]
+	size8 [label="(2)"]
+	size9 [label="(1)"]
+	size10 [label="(2)"]
+	size11 [label="(3)"]
+	size12 [label="(2)"]
+	size13 [label="(3)"]
+	size14 [label="(2)"]
+	size15 [label="(3)"]
+	size16 [label="(2)"]
+	size17 [label="(3)"]
+	size18 [label="(2)"]
+	size19 [label="(3)"]
+	size20 [label="(2)"]
+	size21 [label="(3)"]
+	size22 [label="(4)"]
+	size23 [label="(3)"]
+	size24 [label="(4)"]
+	size25 [label="(3)"]
+	size26 [label="(4)"]
+	size27 [label="(3)"]
+	size28 [label="(4)"]
+	size29 [label="(3)"]
+	size30 [label="(4)"]
+	size31 [label="(5)"]
+
+	edge [style=invis]
+	size0->size1->size2->size3->size4->size5->size6->size7->size8->size9->
+	size10->size11->size12->size13->size14->size15->size16->size17->size18->size19->
+	size20->size21->size22->size23->size24->size25->size26->size27->size28->size29->
+	size30->size31
+
+	node [shape=ellipse]
+	edge [style=solid]
+
+	{rank=same; size0
+		n0_00000 [label="00000"] // shape=ellipse,fontcolor=red,color=red,style=bold]
+	}
+
+	{rank=same; size1
+		n1_00001 [label="00001"] // shape=ellipse,fontcolor=red,color=red,style=bold]
+		n1_00010 [label="00010"]
+		n1_00100 [label="00100"]
+		n1_01000 [label="01000"]
+		n1_10000 [label="10000"]
+	}
+
+	n0_00000->n1_00001 // [color=red,style=bold]
+	n0_00000->n1_00010
+	n0_00000->n1_00100
+	n0_00000->n1_01000
+	n0_00000->n1_10000
+
+	{rank=same; size2
+		n2_00011 [label="00011"]
+		n2_00101 [label="00101"]
+		n2_01001 [label="01001"]
+		n2_10001 [label="10001"]
+		n2_00110 [label="00110"]
+		n2_01010 [label="01010"]
+		n2_10010 [label="10010"]
+		n2_01100 [label="01100"]
+		n2_10100 [label="10100"]
+		n2_11000 [label="11000"]
+	}
+
+	n1_00001->n2_00011
+	n1_00001->n2_00101
+	n1_00001->n2_01001
+	n1_00001->n2_10001
+
+	n1_00010->n2_00011
+	n1_00010->n2_00110
+	n1_00010->n2_01010
+	n1_00010->n2_10010
+
+	n1_00100->n2_00101
+	n1_00100->n2_00110
+	n1_00100->n2_01100
+	n1_00100->n2_10100
+
+	n1_01000->n2_01001
+	n1_01000->n2_01010
+	n1_01000->n2_01100
+	n1_01000->n2_11000
+
+	n1_10000->n2_10001
+	n1_10000->n2_10010
+	n1_10000->n2_10100
+	n1_10000->n2_11000
+
+	{rank=same; size3
+		n3_00001 [label="00001"]
+		n3_00010 [label="00010"]
+		n3_00100 [label="00100"]
+		n3_01000 [label="01000"]
+		n3_10000 [label="10000"]
+	}
+
+	n2_00011->n3_00010
+	n2_00011->n3_00001
+
+	n2_00101->n3_00100
+	n2_00101->n3_00001
+
+	n2_00110->n3_00100
+	n2_00110->n3_00010
+
+	n2_01001->n3_01000
+	n2_01001->n3_00001
+
+	n2_10001->n3_10000
+	n2_10001->n3_00001
+
+	n2_01010->n3_01000
+	n2_01010->n3_00010
+
+	n2_01100->n3_01000
+	n2_01100->n3_00100
+
+	n2_10010->n3_10000
+	n2_10010->n3_00010
+
+	n2_10100->n3_10000
+	n2_10100->n3_00100
+
+	n2_11000->n3_10000
+	n2_11000->n3_01000
+
+}
