@@ -1,5 +1,5 @@
 #
-# Makefile for letter of reference for Annie Cruz
+# Makefile for letter to Professor Knuth
 #
 
 target = letter_to_prof_knuth
@@ -36,6 +36,14 @@ aspell_cmd = aspell --lang=en_GB check
 # Default makefile target
 #
 
+documentation = README.md
+
+#
+# Note: make requires that we set the value of a variable OUTSIDE any rules.
+#
+
+timestamp = `date +%Y%m%d.%H%M`
+
 all: $(pdf)
 
 #
@@ -60,12 +68,29 @@ edit: vi
 notes:
 	(cd ../notes && make vi)
 
+quotes:
+	(cd ../notes && make quotes)
+
+bibtex:
+	(cd ../bibtex && make vi)
+
 spell:
-	$(aspell_cmd) $(latex_source)
+	aspell --lang=en_GB -t check $(latex_source)
+	$(aspell_cmd) $(documentation)
 
 clean:
 	rm -f *.aux *.bbl *.blg *.idx *.ilg *.ind *.log *.dvi *.bak $(consolidated_bibtex_file) .pdf
 
 allclean: clean
-	rm -f $(pdf)
+	rm -f $(pdf) $(documentation).bak
+
+commit:
+	make clean
+	git add .
+	git commit -am "commit from Makefile $(timestamp)"
+	git pull --rebase
+	git push
+
+readme:
+	vi $(documentation)
 
