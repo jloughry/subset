@@ -33,22 +33,14 @@ latex_cmd = pdflatex
 aspell_cmd = aspell --lang=en_GB check
 
 #
-# Default makefile target
+# default Makefile target
 #
 
-documentation = README.md
-
-#
-# Note: make requires that we set the value of a variable OUTSIDE any rules.
-#
-
-timestamp = `date +%Y%m%d.%H%M`
+include ../Makefiles/git1.mk
 
 all: $(pdf)
 
-#
-# Helper makefile targets
-#
+include ../Makefiles/git2.mk
 
 $(pdf): $(latex_source) $(consolidated_bibtex_file) $(makefile)
 	$(latex_cmd) $(target)
@@ -83,17 +75,4 @@ clean:
 
 allclean: clean
 	rm -f $(pdf) $(documentation).bak
-
-commit:
-	make clean
-	git add .
-	git commit -am "commit from Makefile $(timestamp)"
-	make sync
-
-sync:
-	git pull --rebase
-	git push
-
-readme:
-	vi $(documentation)
 
