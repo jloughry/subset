@@ -36,11 +36,7 @@ aspell_cmd = aspell --lang=en_GB check
 # default Makefile target
 #
 
-include ../Makefiles/git1.mk
-
 all: $(pdf)
-
-include ../Makefiles/git2.mk
 
 $(pdf): $(latex_source) $(consolidated_bibtex_file) $(makefile)
 	$(latex_cmd) $(target)
@@ -57,22 +53,15 @@ vi:
 
 edit: vi
 
-notes:
-	(cd ../notes && make vi)
-
-quotes:
-	(cd ../notes && make quotes)
-
-bibtex:
-	(cd ../bibtex && make vi)
-
 spell:
 	aspell --lang=en_GB -t check $(latex_source)
-	$(aspell_cmd) $(documentation)
+	$(aspell_cmd) README.md
 
 clean:
 	rm -f *.aux *.bbl *.blg *.idx *.ilg *.ind *.log *.dvi *.bak $(consolidated_bibtex_file) .pdf
 
 allclean: clean
-	rm -f $(pdf) $(documentation).bak
+	rm -f $(pdf)
+
+include common.mk
 
