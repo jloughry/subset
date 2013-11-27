@@ -36,7 +36,7 @@ aspell_cmd = aspell --lang=en_GB check
 # default Makefile target
 #
 
-all: $(pdf)
+all:: $(pdf)
 
 $(pdf): $(latex_source) $(consolidated_bibtex_file) $(makefile)
 	$(latex_cmd) $(target)
@@ -53,11 +53,10 @@ vi:
 
 edit: vi
 
-spell:
+spell::
 	aspell --lang=en_GB -t check $(latex_source)
-	$(aspell_cmd) README.md
 
-clean:
+clean::
 	rm -f *.aux *.bbl *.blg *.idx *.ilg *.ind *.log *.dvi *.bak $(consolidated_bibtex_file) .pdf
 
 allclean: clean
