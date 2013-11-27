@@ -63,4 +63,3 @@ allclean: clean
 	rm -f $(pdf)
 
 include common.mk
-
