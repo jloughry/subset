@@ -16,7 +16,6 @@ makefile = Makefile
 #
 
 home = /home/rjl
-consolidated_bibtex_file = consolidated_bibtex_file.bib
 
 #
 # Temporary Files
@@ -44,9 +43,6 @@ $(pdf): $(latex_source) $(consolidated_bibtex_file) $(makefile)
 	while ( $(latex_cmd) $(latex_source) ; \
 		grep "Rerun to get cross" $(logfile) > /dev/null ) do true ; \
 	done
-
-$(consolidated_bibtex_file):
-	cp ../bibtex/consolidated_bibtex_source.bib ./$(consolidated_bibtex_file)
 
 vi:
 	vi $(latex_source)
