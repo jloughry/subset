@@ -38,6 +38,7 @@ aspell_cmd = aspell --lang=en_GB check
 all:: $(pdf)
 
 $(pdf): $(latex_source) $(consolidated_bibtex_file) $(makefile)
+	make $(bibtex_file)
 	$(latex_cmd) $(target)
 	if (grep "Warning" $(target).blg > /dev/null ) then false ; fi
 	while ( $(latex_cmd) $(latex_source) ; \
