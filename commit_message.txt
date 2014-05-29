@@ -1,1 +1,1 @@
-add table of 4-sequence
+improve formatting of table
