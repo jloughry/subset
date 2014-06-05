@@ -1,1 +1,1 @@
-added a new state transition diagram for order-4
+try aligning an image to the right of the table
