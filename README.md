@@ -17,7 +17,7 @@ In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 <img src="https://github.com/jloughry/subset/raw/master/optimal_4.png"
 width="300" alt="optimal banker's sequence for n=4"/><img
 src="https://github.com/jloughry/subset/raw/master/minimised_snowflake_order_4.png"
-width="300" align="right"alt="optimal banker's sequence for n=4"/>
+width="350" align="right"alt="optimal banker's sequence for n=4"/>
 
 <table>
 	<tr><th>Binary</th><th>Dec (Hex)</th><th>Bits Set</th><th>Index</th></tr>
