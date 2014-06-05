@@ -1,1 +1,1 @@
-enlarge snowflake diagram to fit
+fix permissions; enlarge tree diagram slightly
