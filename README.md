@@ -14,7 +14,9 @@ In decimal it is 0, 1, 3, 2, 6, 4, 12, 8, 10, 11, 9, 13, 5, 7, 15, 14.
 In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 1011, 1001, 1101, 0101, 0111, 1111, 1110.
 
-<p>
+<img src="https://github.com/jloughry/subset/raw/master/optimal_4.png"
+align="right" width="200" alt="optimal banker's sequence for n=4"/>
+
 <table>
 	<tr><th>Binary</th><th>Dec (Hex)</th><th>Bits Set</th><th>Index</th></tr>
 	<tr><td>0000</td><td align="right">0 (0)</td><td>&nbsp;</td><td>0</td></tr>
@@ -34,8 +36,6 @@ In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 	<tr><td>1111</td><td align="right">15 (F)</td><td>****</td><td>E</td></tr>
 	<tr><td>1110</td><td align="right">14 (E)</td><td>***</td><td>F</td></tr>
 </table>
-</p><img src="https://github.com/jloughry/subset/raw/master/optimal_4.png"
-align="right" width="200" alt="optimal banker's sequence for n=4"/>
 
 The solution was found by using `dot` to draw a directed graph of all possible
 one-bit transitions from the starting state 0000 and backtracking from impossible
