@@ -14,11 +14,11 @@ In decimal it is 0, 1, 3, 2, 6, 4, 12, 8, 10, 11, 9, 13, 5, 7, 15, 14.
 In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 1011, 1001, 1101, 0101, 0111, 1111, 1110.
 
-<img src="https://github.com/jloughry/subset/raw/master/minimised_snowflake_order_4.png"
-width="400" alt="optimal banker's sequence for n=4"/>
-
 <img src="https://github.com/jloughry/subset/raw/master/optimal_4.png"
-align="right" width="400" alt="optimal banker's sequence for n=4"/>
+width="300" alt="optimal banker's sequence for n=4"/>
+
+<img src="https://github.com/jloughry/subset/raw/master/minimised_snowflake_order_4.png"
+width="400" align="right"alt="optimal banker's sequence for n=4"/>
 
 <table>
 	<tr><th>Binary</th><th>Dec (Hex)</th><th>Bits Set</th><th>Index</th></tr>
