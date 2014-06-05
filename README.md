@@ -15,7 +15,7 @@ In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 1011, 1001, 1101, 0101, 0111, 1111, 1110.
 
 <table>
-	<tr><th>Binary</th><th>Decimal (Hex)</th><th>Bits Set</th><th>Index</th></tr>
+	<tr><th>Binary</th><th>Dec (Hex)</th><th>Bits Set</th><th>Index</th></tr>
 	<tr><td>0000</td><td align="right">0 (0)</td><td>&nbsp;</td><td>0</td></tr>
 	<tr><td>0001</td><td align="right">1 (1)</td><td>*</td><td>1</td></tr>
 	<tr><td>0011</td><td align="right">3 (3)</td><td>**</td><td>2</td></tr>
@@ -37,11 +37,29 @@ In binary, the sequence is 0000, 0001, 0011, 0010, 0110, 0100, 1100, 1000, 1010,
 The solution was found by using `dot` to draw a directed graph of all possible
 one-bit transitions from the starting state 0000 and backtracking from impossible
 situations until a solution was found.  It is not known whether this solution is
-unique or whether any solutions exist for *n* > 4.
+unique or whether any solutions exist for *n* > 4. An automated method for
+constructing `dot` or `neato` source code should be developed.
 
 Update 20140115.1225:
 ---------------------
 
 Added Eric Burnett as co-author on the paper. I have to finish my thesis before
 I can finish this paper.
+
+Update 20140604.1658:
+---------------------
+
+`minimised_snowflake_order_4.dot` can be compiled to
+[PDF](https://github.com/jloughry/subset/blob/master/minimised_snowflake_order_4.pdf?raw=true)
+with the command line:
+
+````
+$ neato -Goverlap=scale -T pdf minimised_snowflake_order_4.dot -o minimised_snowflake_order_4.pdf
+````
+
+It is not known whether the path shown for order-4 is unique, but it is optimal. "Optimal"
+in this context means that all state transitions involve setting or resetting a single bit
+("flipping a bit") and all *n*-bit states are enumerated before any (*n*+2)-bit states
+are enumerated. "Strictly optimal" would have all *n*-bit states enumerated before any
+(*n*+1)-bit states are enumerated, but that can't be done by flipping a bit for *n* > 1.
 

@@ -1,1 +1,1 @@
-combine columns for readability
+added a new state transition diagram for order-4

@@ -1,0 +1,83 @@
+/*
+	Compile with:
+
+	$ neato -Goverlap=scale -T pdf minimised_snowflake_order_4.dot -o minimised_snowflake_order_4.pdf
+*/
+
+strict digraph optimal_4 {	/* the "strict" keyword combines redundant edges automatically */
+
+	edge [style=solid]
+	node [shape=box]
+
+	/* at rank 0, no bits are set (this is an implicit node in the graph) */
+
+	/* to get to rank 1, we go from no bits set to 1 bit set */
+
+	0000->0001 [color=red,style=bold]
+	0000->0010
+	0000->0100
+	0000->1000
+
+	/* to get to rank 2, we go from 1 bit set to 2 bits set */
+
+	0001->0011 [color=red,style=bold]; 0001->0101; 0001->1001;
+	0010->0011; 0010->0110 [color=red,style=bold]; 0010->1010;
+	0100->0101; 0100->0110; 0100->1100 [color=red,style=bold];
+	1000->1001; 1000->1010 [color=red,style=bold]; 1000->1100;
+
+	/* to get to rank 3, we go from 2 bits set to 1 bit set */
+
+	0011->0010 [color=red,style=bold]; 0011->0001;
+	0110->0100 [color=red,style=bold]; 0110->0010;
+	1100->1000 [color=red,style=bold]; 1100->0100;
+	0101->0100; 0101->0001;
+	1010->1000; 1010->0010;
+	1001->1000; 1001->0001;
+
+	/* to get to rank 4, we go from 1 bit set to 2 bits set (same as rank 2) */
+
+	/* to get to rank 5, we go from 2 bits set to 1 bit set (same as rank 3) */
+
+	/* to get to rank 6, we go from 1 bit set to 2 bits set again */
+
+	/* to get to rank 7, we go from 2 bits set to 1 bit set again */
+
+	/* to get to rank 8, we go from 1 bit set to 2 bits set again */
+
+	/* to get to rank 9, we go from 2 bits set to 3 bits set */
+
+	0011->0111; 0011->1011;
+	0110->0111; 0110->1110;
+	1100->1101; 1100->1110;
+	0101->0111 [color=red,style=bold]; 0101->1101;
+	1010->1011 [color=red,style=bold]; 1010->1110;
+	1001->1011; 1001->1101 [color=red,style=bold];
+
+	/* to get to rank 10, we go from 3 bits set to 2 bits set */
+
+	1110->1100; 1110->1010; 1110->0110;
+	1101->1100; 1101->1001; 1101->0101 [color=red,style=bold];
+	1011->1010; 1011->1001 [color=red,style=bold]; 1011->0011;
+	0111->0110; 0111->0101; 0111->0011;
+
+	/* to get to rank 11, we go from 2 bits set to 3 bits set (same as rank 9) */
+
+	/* to get to rank 12, we go from 3 bits set to 2 bits set (same as rank 10) */
+
+	/* to get to rank 13, we go from 2 bits set to 3 bits set (same as rank 9) */
+
+	/* to get to rank 14, we go from 3 bits set to 4 bits set */
+
+	1110->1111;
+	1101->1111;
+	1011->1111;
+	0111->1111 [color=red,style=bold];
+
+	/* to get to rank 15, we go from 4 bits set to 3 bits set */
+
+	1111->1110 [color=red,style=bold];
+	1111->1101;
+	1111->1011;
+	1111->0111;
+}
+
